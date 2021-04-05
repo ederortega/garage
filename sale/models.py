@@ -31,7 +31,7 @@ class Product(models.Model):
     name = models.CharField(max_length=180)
     category = models.ForeignKey("sale.Category", on_delete=models.CASCADE)
     value = models.FloatField()
-    image_link = models.CharField(max_length=250, blank=True)
+    image_link = models.URLField(blank=True)
 
     def __str__(self):
         return '{}-{}'.format(self.code, self.name)
